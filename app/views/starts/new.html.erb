@@ -1,2 +1,7 @@
-<h1>Starts#new</h1>
-<p>Find me in app/views/starts/new.html.erb</p>
+<h1>New charge</h1>
+
+<%= render 'form', start: @start %>
+
+<div>
+  <%= link_to 'Back to starts', starts_path %>
+</div>
