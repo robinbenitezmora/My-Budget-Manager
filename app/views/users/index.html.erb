@@ -1,2 +1,14 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<p><%= notice %></p>
+
+<h1>Listing users</h1>
+
+<div id="users">
+  <%= @users.each do |user| %>
+    <%= render user %>
+    <p>
+      <%= link_to "Show this user", user %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New user", new_user_path %>
