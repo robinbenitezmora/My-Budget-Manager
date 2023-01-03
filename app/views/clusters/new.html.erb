@@ -1,2 +1,7 @@
-<h1>Clusters#new</h1>
-<p>Find me in app/views/clusters/new.html.erb</p>
+<h1>New cluster</h1>
+
+<%= render 'form', cluster: @cluster %>
+
+<div>
+  <%= link_to 'Back to clusters', clusters_path %>
+</div>

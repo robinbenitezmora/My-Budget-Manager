@@ -1,2 +1,14 @@
-<h1>Clusters#index</h1>
-<p>Find me in app/views/clusters/index.html.erb</p>
+<p><%= notice %></p>
+
+<h1>Clusters</h1>
+
+<div id="clusters">
+  <%= @clusters.each do |cluster| %>
+    <%= render cluster %>
+    <p>
+      <%= link_to 'Show this cluster', cluster %>
+    </p>
+    <% end %>
+</div>
+
+<%= link_to 'New cluster', new_cluster_path %>
