@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe ClustersController, type: :routing do
   describe 'routing' do
-
     it 'routes to #index' do
       expect(get: '/clusters').to route_to('clusters#index')
     end
@@ -34,6 +33,5 @@ RSpec.describe ClustersController, type: :routing do
     it 'routes to #destroy' do
       expect(delete: '/clusters/1').to route_to('clusters#destroy', id: '1')
     end
-
   end
 end

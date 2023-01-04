@@ -1,1 +1,1 @@
-json.array! @associations, partial: "associations/association", as: :association
+json.array! @associations, partial: 'associations/association', as: :association
