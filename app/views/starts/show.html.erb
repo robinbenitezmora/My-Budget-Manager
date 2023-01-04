@@ -1,0 +1,9 @@
+<p><%= notice %></p>
+
+<%= render @charge %>
+
+<div>
+  <%= link_to "Edit this charge", edit_start_path(@start) %> |
+  <%= link_to "Back to charges", starts_path %>
+  <%= button_to "Destroy this charge", @start, method: :delete %>
+</div>
