@@ -1,4 +1,4 @@
-ENV['RAILS_ENV'] ||= 'test'
+ENV['RAILS_ENV'] ||= 'test' # rubocop:todo Layout/EndOfLine
 require_relative '../config/environment'
 require 'rails/test_help'
 

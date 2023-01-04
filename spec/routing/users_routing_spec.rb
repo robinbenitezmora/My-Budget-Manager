@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'rails_helper' # rubocop:todo Layout/EndOfLine
 
 RSpec.describe UsersController, type: :routing do
   describe 'routing' do

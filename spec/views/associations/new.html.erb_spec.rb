@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'rails_helper' # rubocop:todo Layout/EndOfLine
 
 RSpec.describe 'associations/new', type: :view do
   before(:each) do
@@ -9,6 +9,7 @@ RSpec.describe 'associations/new', type: :view do
     render
 
     assert_select 'form[action=?][method=?]', associations_path, 'post' do
+      # Nothing
     end
   end
 end

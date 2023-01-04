@@ -1,4 +1,4 @@
-class ClustersController < ApplicationController
+class ClustersController < ApplicationController # rubocop:todo Layout/EndOfLine
   before_action :set_cluster, only: %i[show edit update destroy]
 
   # GET /clusters or /clusters.json

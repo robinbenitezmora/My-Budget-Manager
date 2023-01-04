@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < ApplicationController # rubocop:todo Layout/EndOfLine
   before_action :set_user, only: %i[show edit update destroy]
 
   # GET /users or /users.json

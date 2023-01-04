@@ -1,1 +1,1 @@
-json.partial! 'clusters/cluster', cluster: @cluster
+json.partial! 'clusters/cluster', cluster: @cluster # rubocop:todo Layout/EndOfLine

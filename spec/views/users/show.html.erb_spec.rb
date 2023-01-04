@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'rails_helper' # rubocop:todo Layout/EndOfLine
 
 RSpec.describe 'users/show', type: :view do
   before(:each) do

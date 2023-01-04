@@ -1,2 +1,2 @@
-class Association < ApplicationRecord
+class Association < ApplicationRecord # rubocop:todo Layout/EndOfLine
 end

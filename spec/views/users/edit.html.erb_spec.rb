@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'rails_helper' # rubocop:todo Layout/EndOfLine
 
 RSpec.describe 'users/edit', type: :view do
   let(:user) do
