@@ -1,5 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe "starts/show.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe "starts/show", type: :view do
+  before(:each) do
+    assign(:start, Start.create!(
+      name: "Name",
+      amount: "9.99"
+    ))
+  end
+
+  it "renders attributes in <p>" do
+    render
+    expect(rendered).to match(/Name/)
+    expect(rendered).to match(/9.99/)
+  end
 end

@@ -1,5 +1,21 @@
 require 'rails_helper'
 
-RSpec.describe "starts/new.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe "starts/new", type: :view do
+  before(:each) do
+    assign(:start, Start.new(
+      name: "MyString",
+      amount: "9.99"
+    ))
+  end
+
+  it "renders new start form" do
+    render
+
+    assert_select "form[action=?][method=?]", starts_path, "post" do
+
+      assert_select "input[name=?]", "start[name]"
+
+      assert_select "input[name=?]", "start[amount]"
+    end
+  end
 end
