@@ -1,4 +1,4 @@
-require 'rails_helper' # rubocop:todo Layout/EndOfLine
+require 'rails_helper'
 
 RSpec.describe 'associations/edit', type: :view do
   let(:association) do

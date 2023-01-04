@@ -1,4 +1,4 @@
-require 'rails_helper' # rubocop:todo Layout/EndOfLine
+require 'rails_helper'
 
 RSpec.describe StartsController, type: :routing do
   describe 'routing' do

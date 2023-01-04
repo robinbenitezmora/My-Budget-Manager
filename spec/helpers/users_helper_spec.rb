@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'rails_helper' # rubocop:disable Layout/EndOfLine
 
 # Specs in this file have access to a helper object that includes
 # the UsersHelper. For example:

@@ -1,4 +1,4 @@
-class StartsController < ApplicationController # rubocop:todo Layout/EndOfLine
+class StartsController < ApplicationController
   before_action :set_start, only: %i[show edit update destroy]
 
   # GET /starts or /starts.json

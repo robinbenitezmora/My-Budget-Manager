@@ -1,4 +1,4 @@
-class AssociationsController < ApplicationController # rubocop:todo Layout/EndOfLine
+class AssociationsController < ApplicationController
   before_action :set_association, only: %i[show edit update destroy]
 
   # GET /associations or /associations.json

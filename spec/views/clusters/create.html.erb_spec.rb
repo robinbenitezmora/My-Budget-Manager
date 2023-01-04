@@ -1,4 +1,4 @@
-require 'rails_helper' # rubocop:todo Layout/EndOfLine
+require 'rails_helper'
 
 RSpec.describe 'clusters/create.html.erb', type: :view do
   pending "add some examples to (or delete) #{__FILE__}"

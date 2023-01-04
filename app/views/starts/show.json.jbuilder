@@ -1,1 +1,1 @@
-json.partial! 'starts/start', start: @start # rubocop:todo Layout/EndOfLine
+json.partial! 'starts/start', start: @start
