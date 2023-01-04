@@ -1,5 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe "associations/index.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe "associations/index", type: :view do
+  before(:each) do
+    assign(:associations, [
+      Association.create!(),
+      Association.create!()
+    ])
+  end
+
+  it "renders a list of associations" do
+    render
+    cell = Rails::VERSION::STRING >= '7' ? 'div>p' : 'tr>td'
+  end
 end

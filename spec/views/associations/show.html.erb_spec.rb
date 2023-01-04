@@ -1,5 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe "associations/show.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe "associations/show", type: :view do
+  before(:each) do
+    assign(:association, Association.create!())
+  end
+
+  it "renders attributes in <p>" do
+    render
+  end
 end
