@@ -3,7 +3,7 @@ class StartsController < ApplicationController
 
   # GET /starts or /starts.json
   def index
-    @cluster_starts = Clusters.all.order('starts.created_at DESC').includes([:author_id])
+    @cluster_starts = Starts.all.order('starts.created_at DESC').includes[:user]
   end
 
   # GET /starts/1 or /starts/1.json
@@ -26,11 +26,9 @@ class StartsController < ApplicationController
     respond_to do |format|
       if @start.save
         @start_category = Association.create(start_id: @start.id, cluster_id: cluster_params[:cluster_id])
-        format.html { redirect_to cluster_associations_path(cluster_params[:cluster_id]), notice: "Charge was successfully created." }
-        format.json { render :show, status: :created, location: @start }
+        format.html { redirect_to cluster_associations_path(@start_category.cluster_id), notice: "Charge was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @start.errors, status: :unprocessable_entity }
       end
     end
   end
