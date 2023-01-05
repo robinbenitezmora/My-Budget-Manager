@@ -3,7 +3,7 @@ class StartsController < ApplicationController
 
   # GET /starts or /starts.json
   def index
-    @starts = Start.all
+    @cluster_starts = Clusters.all.order('starts.created_at DESC').includes([:author_id])
   end
 
   # GET /starts/1 or /starts/1.json
@@ -20,26 +20,16 @@ class StartsController < ApplicationController
   # POST /starts or /starts.json
   def create
     @start = Start.new(start_params)
+    
+    @start.author_id = current_user.id
 
     respond_to do |format|
       if @start.save
-        format.html { redirect_to start_url(@start), notice: 'Start was succesfully created' }
+        @start_category = Association.create(start_id: @start.id, cluster_id: cluster_params[:cluster_id])
+        format.html { redirect_to cluster_associations_path(cluster_params[:cluster_id]), notice: "Charge was successfully created." }
         format.json { render :show, status: :created, location: @start }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @start.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /starts/1 or /starts/1.json
-  def update
-    respond_to do |format|
-      if @start.update(start_params)
-        format.html { redirect_to start_url(@start), notice: 'Start was succesfully updated' }
-        format.json { render :show, status: :ok, location: @start }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @start.errors, status: :unprocessable_entity }
       end
     end
@@ -59,6 +49,10 @@ class StartsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_start
     @start = Start.find(params[:id])
+  end
+
+  def cluster_params
+    params.require(:start).permit(:cluster_id)
   end
 
   # Only allow a list of trusted parameters through.
