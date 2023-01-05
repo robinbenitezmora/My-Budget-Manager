@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :splashs, only: [:index]
     resources :clusters, only: [:index, :new, :create] do
+      resources :starts, only: [:new, :create]
       resources :associations, only: [:index]
     end
 
