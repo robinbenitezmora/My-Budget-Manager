@@ -3,7 +3,7 @@ class ClustersController < ApplicationController
 
   # GET /clusters or /clusters.json
   def index
-    @clusters = Cluster.all
+    @clusters = Cluster.all.includes([:user])
   end
 
   # GET /clusters/1 or /clusters/1.json
