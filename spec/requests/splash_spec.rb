@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Splashes", type: :request do
+RSpec.describe "/splashs", type: :request do
   describe "GET /index" do
     it "returns http success" do
       get "/splashs/index"
