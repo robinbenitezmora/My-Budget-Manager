@@ -32,4 +32,4 @@ RSpec.describe Start, type: :model do
       expect(subject.author_id).to eq(user.id)
     end
   end
-  
+end

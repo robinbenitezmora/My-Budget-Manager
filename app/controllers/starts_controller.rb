@@ -20,13 +20,15 @@ class StartsController < ApplicationController
   # POST /starts or /starts.json
   def create
     @start = Start.new(start_params)
-    
+
     @start.author_id = current_user.id
 
     respond_to do |format|
       if @start.save
         @start_category = Association.create(start_id: @start.id, cluster_id: cluster_params[:cluster_id])
-        format.html { redirect_to cluster_associations_path(@start_category.cluster_id), notice: "Charge was successfully created." }
+        format.html do
+          redirect_to cluster_associations_path(@start_category.cluster_id), notice: 'Charge was successfully created.'
+        end
       else
         format.html { render :new, status: :unprocessable_entity }
       end

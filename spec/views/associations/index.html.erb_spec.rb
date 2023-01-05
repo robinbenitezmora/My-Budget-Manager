@@ -5,13 +5,13 @@ RSpec.describe 'associations/index', type: :view do
     @user = User.create(
       name: 'Robin',
       email: 'robinbenitez@yahoo.com',
-      password: '123456',
+      password: '123456'
     )
 
     @category = @user.clusters.create(
       name: 'Food',
       icon: 'https://fasfa-utensils',
-      user_id = user.id
+      user_id: @user.id
     )
 
     @start = Start.create(
@@ -23,14 +23,13 @@ RSpec.describe 'associations/index', type: :view do
     @cluster_start = Association.create(cluster_id: @category.id, start_id: @start.id)
 
     visit new_user_session_path
-      fill_in 'user[eamil]', with: @user.eamil
-      fill_in 'user[password]', with: @user.password
-      click_button 'Log in'
-      visit clusters_path
+    fill_in 'user[eamil]', with: @user.eamil
+    fill_in 'user[password]', with: @user.password
+    click_button 'Log in'
+    visit clusters_path
   end
 
   describe 'GET /relations between clusters and starts' do
-
     it 'displays all transactions' do
       visit cluster_associations_path(@category.id)
       expect(page).to have_content('Domino Pizza')

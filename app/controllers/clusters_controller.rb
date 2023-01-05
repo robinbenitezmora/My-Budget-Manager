@@ -24,7 +24,7 @@ class ClustersController < ApplicationController
 
     respond_to do |format|
       if @cluster.save
-        format.html { redirect_to clusters_path, notice: "Category was successfully created." }
+        format.html { redirect_to clusters_path, notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @cluster }
       else
         format.html { render :new, status: :unprocessable_entity }
