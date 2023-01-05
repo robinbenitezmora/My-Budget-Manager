@@ -1,14 +1,29 @@
 <p><%= notice %></p>
 
-<h1>Relations</h1>
-
 <div id="associations">
-  <%= @associations.each do |association| %>
-    <%= render association %>
-    <p>
-      <%= link_to 'Show this relation', association %>
-    </p>
-  <% end %>
-</div>
+  <div class="cluster-transactions-header">
+    <h2><%= @cluster.name %></h2>
+  </div>
 
-<%= link_to 'New relation', new_association_path %>      
+  <ul class="start_container">
+    <% if @starts.empty? %>
+      <li>
+        <h3>You do not have any registered charges yet</h3>
+      </li>
+    <% end %>
+    <% @starts.each do |start| %>
+      <li>
+        <div> LOGO <%# <div><%= @cluster.icon %></div>
+        <div>
+          <h3><%= start.name %></h3>
+          <h4><%= start.created_at %></h4>
+        </div>
+        <p>
+          <%= start.amount %>
+        </p>
+      </li>
+    <% end %>  
+  </ul>
+
+  <%= link_to "ADD A NEW TRANSACTION", new_start_path %>
+</div>

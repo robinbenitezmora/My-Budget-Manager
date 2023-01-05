@@ -15,25 +15,19 @@
     <h1>LOGO</h1>
     <nav class="nav">
       <ul class="categories">
+        <% if current_page?(root_path) || current_page?(controller: "clusters", action: "new") %>
         <li>
-          <%= link_to root_path do %>
-            CATEGORIES
-          <% end %>
+          <h2>CATEGORIES</h2>
         </li>
+        <% else %>
         <li>
-          <%= link_to transactions_path do %>
-            TRANSACTIONS
-          <% end %>
+          <%= link_to '<', root_path %>
+          <h2>TRANSACTIONS</h2>
         </li>
-        <li>
-          <%= link_to new_transaction_path do %>
-            NEW TRANSACTION
-          <% end %>
-        </li>
-      </ul>     
+        <% end %>
+      </ul>
     </nav> <br>
     <% end %>
-
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

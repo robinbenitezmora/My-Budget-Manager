@@ -1,12 +1,11 @@
-<div id="<%= dom_id cluster %>">
-  <p>
-    <strong>Name:</strong>
-    <%= cluster.name %>
-  </p>
-
-  <p>
-    <strong>Icon:</strong>
-    <%= cluster.icon %>
-  </p>
-  </div>
-  
+<ul class="cluster-container">
+<% @clusters.each do |cluster| %>
+  <li class="cluster">
+    <div class="cluster-image">
+      <%= image_tag cluster.icon, alt: 'icon' %>
+    </div>
+    <h2><%= link_to cluster.name, cluster_associations_path(cluster_id: cluster.id) %></h2>
+    <p>Transactions: <%= cluster.starts.count || 0 %></p>
+  </li>
+<% end %>
+</ul>

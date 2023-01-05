@@ -21,7 +21,12 @@
     <%= form.text_field :amount %>
   </div>
 
+  <div class="category-input-container">
+    <%= form.label :categories %>
+    <%= form.select :cluster_id, Cluster.all.collect {|cluster| [cluster.name, cluster.id]},{include_blank: true}, class:"form-select" %>
+  </div>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'SAVE' %>
   </div>
 <% end %>
