@@ -1,4 +1,4 @@
-class ApplicationMailer < ActionMailer::Base # rubocop:todo Layout/EndOfLine
+class ApplicationMailer < ActionMailer::Base
   default from: 'from@example.com'
   layout 'mailer'
 end

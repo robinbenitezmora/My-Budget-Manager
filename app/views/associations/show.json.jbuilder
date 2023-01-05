@@ -1,1 +1,1 @@
-json.partial! 'associations/association', association: @association # rubocop:todo Layout/EndOfLine
+json.partial! 'associations/association', association: @association

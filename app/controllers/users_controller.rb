@@ -1,4 +1,4 @@
-class UsersController < ApplicationController # rubocop:todo Layout/EndOfLine
+class UsersController < ApplicationController
   before_action :authenticate_user!
 
   # GET /users or /users.json
