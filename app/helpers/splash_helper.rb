@@ -1,2 +1,2 @@
-module SplashHelper
+module   splashsHelper
 end
