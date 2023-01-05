@@ -1,0 +1,9 @@
+<p><%= notice %></p>
+
+<%= render @cluster %>
+
+<div>
+  <%= link_to "Edit this cluster", edit_cluster_path(@cluster) %> |
+  <%= link_to "Back to clusters", clusters_path %>
+  <%= button_to "Destroy this cluster", @cluster, method: :delete %>
+</div>
