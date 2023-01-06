@@ -1,14 +1,6 @@
 <p><%= notice %></p>
 
-<h1>Clusters</h1>
-
-<div id="clusters">
-  <%= @clusters.each do |cluster| %>
-    <%= render cluster %>
-    <p>
-      <%= link_to 'Show this cluster', cluster %>
-    </p>
-    <% end %>
+<div id="cluster-section">
+  <%= render partial: '/clusters/cluster' %>
+  <%= link_to 'ADD NEW CATEGORY', new_cluster_path, class: 'btn-primary' %>
 </div>
-
-<%= link_to 'New cluster', new_cluster_path %>
