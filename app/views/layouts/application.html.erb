@@ -11,27 +11,8 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
     <h1>LOGO</h1>
-    <nav class="nav">
-      <ul class="categories">
-        <li>
-          <%= link_to root_path do %>
-            CATEGORIES
-          <% end %>
-        </li>
-        <li>
-          <%= link_to transactions_path do %>
-            TRANSACTIONS
-          <% end %>
-        </li>
-        <li>
-          <%= link_to new_transaction_path do %>
-            NEW TRANSACTION
-          <% end %>
-        </li>
-      </ul>     
-    </nav> <br>
+    <% if user_signed_in? %>
     <% end %>
 
     <p class="notice"><%= notice %></p>
