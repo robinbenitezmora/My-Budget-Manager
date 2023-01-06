@@ -1,1 +1,1 @@
-json.array! @starts, partial: 'starts/start', as: :charge
+# json.array! @starts, partial: 'starts/start', as: :charge

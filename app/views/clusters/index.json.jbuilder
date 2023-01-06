@@ -1,1 +1,1 @@
-json.array! @clusters, partial: 'clusters/cluster', as: :group
+# json.array! @clusters, partial: 'clusters/cluster', as: :group
