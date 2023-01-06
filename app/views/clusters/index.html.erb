@@ -1,6 +1,8 @@
-<p><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
 <div id="cluster-section">
   <%= render partial: '/clusters/cluster' %>
-  <%= link_to 'ADD NEW CATEGORY', new_cluster_path, class: 'btn-primary' %>
+  <div class="add-b-container">
+    <%= link_to 'ADD NEW CATEGORY', new_cluster_path, class: 'add-category' %>
+  </div>
 </div>

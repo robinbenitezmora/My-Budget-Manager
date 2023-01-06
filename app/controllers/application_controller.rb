@@ -14,8 +14,8 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     if user_signed_in?
       super
-    elsif request.original_fullpath != splashs_index_path
-      redirect_to splashs_index_path, notice: 'Please Login to track your transactions!'
+    elsif request.original_fullpath != pages_index_path
+      redirect_to pages_index_path, notice: 'Please Login to track your transactions!'
     end
   end
 end

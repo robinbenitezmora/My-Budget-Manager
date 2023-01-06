@@ -1,6 +1,6 @@
 <%= form_with(model: cluster) do |form| %>
   <% if cluster.errors.any? %>
-    <div id="error_explanation">
+    <div style="color: green">
       <h2><%= pluralize(cluster.errors.count, "error") %> prohibited this cluster from being saved:</h2>
 
       <ul>
@@ -12,22 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+    <%= form.text_field :name, placeholder: "Name" %>
+  </div>>
 
-  <div class="field">
-   <%= form.select :icon, [
+  <div class="categorie-input-container" >
+    <%= form.select :icon, [
        ["Investment", "investment.png"], ["Bills", "bills.png" ],
        ["Healthcare", "health.png"], ["Education", "education.png"],
        ["Transportation", "public-transport.png"], ["Travels/Trips", "travel.png"],
        ["Food, Snacks, Restaurants", "food.png"], ["Gym and Self-care", "gym.png"],
        ["Entertainment", "entertainment.png"], ["Beauty", "beauty.png"], ["Shopping", "shopping.png"],
        ["Emergencies", "emergency.png"]
-       ], class:'form-control' %>
+       ], class:'form-select' %>
+  </div>
+   <div class="add-t-container">
+    <%= form.submit 'SAVE', class: "add-transaction"%>
   </div>
 
-  <div class="actions">
-    <%= form.submit 'SAVE' %>
+  <div class="button-back">
+    <%= link_to "Back to clusters", clusters_path, class: "back-to" %> 
   </div>
+
 <% end %>
