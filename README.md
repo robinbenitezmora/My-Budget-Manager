@@ -58,7 +58,8 @@ After you're finished please remove all the comments and instructions!
 # 📖 My Budget App <a name="about-project"></a>
 
 
-**My Budget App** is an App created with Ruby on Rails and Postgresql, that will keep a record of all your personal money investments.
+**My Budget App** is an App created with Ruby on Rails and Postgresql, that will keep a record of all your personal money investments for the market.
+
 
 ## 🛠 Built With <a name="built-with"></a>
 
