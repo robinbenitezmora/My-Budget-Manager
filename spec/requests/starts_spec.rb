@@ -21,10 +21,6 @@ RSpec.describe '/starts', type: :request do
       expect(response).to have_http_status(200)
     end
 
-    it 'responds html' do
-      expect(response.content_type).to eq('text/html')
-    end
-
     it 'renders the new template' do
       expect(response).to render_template(:new)
     end

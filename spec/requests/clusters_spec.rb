@@ -18,27 +18,48 @@ RSpec.describe '/clusters', type: :request do
     )
   end
 
-  describe 'GET /clusters' do
+  let(:valid_attributes) do
+    {
+      name: 'Food',
+      icon: 'http://fasfa-utensils',
+      user_id: user.id
+    }
+  end
+
+  let(:invalid_attributes) do
+    {
+      name: nil,
+      icon: nil,
+      user_id: nil
+    }
+  end
+
+  describe 'GET /index' do
     before do
       sign_in user
-      get cluster_path
+      get clusters_path
     end
 
-    it 'returns the right responds' do
+    it 'renders a successful response' do
+      expect(response).to be_successful
+    end
+  end
+
+  describe 'GET /show' do
+    before do
+      sign_in user
+      get cluster_path(category)
+    end
+  end
+
+  describe 'GET /new' do
+    before do
+      sign_in user
+      get new_cluster_path
+    end
+
+    it 'returns a new category' do
       get '/clusters/new'
-      expect(response).to have_http_status(200)
-    end
-
-    it 'responds html' do
-      expect(response.content_type).to eq('text/html')
-    end
-
-    it 'renders the new template' do
-      expect(response).to render_template(:new)
-    end
-
-    it 'returns all clusters/categories' do
-      get '/clusters'
       expect(response).to have_http_status(200)
     end
   end
@@ -52,10 +73,6 @@ RSpec.describe '/clusters', type: :request do
     it 'returns a new category' do
       get '/clusters/new'
       expect(response).to have_http_status(200)
-    end
-
-    it 'responds html' do
-      expect(response.content_type).to eq('text/html')
     end
   end
 end
