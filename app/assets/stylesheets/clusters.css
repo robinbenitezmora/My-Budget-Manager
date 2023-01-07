@@ -8,6 +8,14 @@
   margin-top: 15px;
 }
 
+.cluster-transactions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 1.5rem 0 0.5rem 3rem;
+}
+
 .new-my-form img {
   height: 35px;
 }
@@ -57,12 +65,26 @@ a {
 }
 
 .add-b-container {
-  background-color: #5fb523;
-  width: 100%;
-  height: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 5rem;
+  background-color: #5fb523;
+  border-radius: 5px;
+  margin-top: 3rem;
+}
+
+.transaction-new-add-category {
+  display: flex;
+  justify-content: center;
+  background-color: #5fb523;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 10px;
+  width: 90%;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
 .add-category {
