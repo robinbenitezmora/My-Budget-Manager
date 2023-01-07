@@ -6,18 +6,18 @@
   justify-content: space-between;
 }
 
-.charge-container {
+.start-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-.group-transactions-header {
+.cluster-transactions-header {
   width: 100%;
 }
 
-.group-transactions-header h3 {
+.cluster-transactions-header h3 {
   display: flex;
   justify-content: space-between;
   background-color: #fff;
@@ -25,16 +25,16 @@
   border-bottom: 1px solid rgb(207, 207, 207);
 }
 
-.charge-container li {
+.start-container li {
   width: 90%;
 }
 
-.charge-card {
+.start-card {
   display: flex;
   gap: 10px;
 }
 
-.charge-image {
+.start-image {
   background-color: #386aab;
   display: flex;
   align-items: center;
@@ -42,21 +42,21 @@
   border-radius: 5px;
 }
 
-.charge-image img {
+.start-image img {
   height: 65px;
 }
 
-.charge-info {
+.start-info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.charge-info h3 {
+.start-info h3 {
   color: #434b54;
 }
 
-.charge-info h4 {
+.start-info h4 {
   color: #c5c5c5;
 }
 

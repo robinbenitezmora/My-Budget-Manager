@@ -1,6 +1,6 @@
 <%= form_with(model: start) do |form| %>
   <% if start.errors.any? %>
-    <div id="error_explanation">
+    <div style="color: red">
       <h2><%= pluralize(start.errors.count, "error") %> prohibited this start from being saved:</h2>
 
       <ul>
@@ -12,21 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, placeholder: "Name" %>
   </div>
 
   <div class="field">
-    <%= form.label :amount %>
-    <%= form.text_field :amount %>
+    <%= form.text_field :amount, placeholder: "Amount" %>
   </div>
 
-  <div class="category-input-container">
-    <%= form.label :categories %>
-    <%= form.select :cluster_id, Cluster.all.collect {|cluster| [cluster.name, cluster.id]},{include_blank: true}, class:"form-select" %>
+  <div class="categorie-input-container">
+    <%= form.select :cluster_id, Cluster.all.collect {|cluster| [cluster.name, cluster.id]},{include_blank: true}, :required => 'required', class:"form-select" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit 'SAVE' %>
+  <div class="add-t-container">
+    <%= form.submit 'SAVE', class:"add-transaction" %>
+  </div>
+
+  <div class="button-back">
+    <%= link_to "Back to charges", starts_path, class: "back-to" %>
   </div>
 <% end %>
