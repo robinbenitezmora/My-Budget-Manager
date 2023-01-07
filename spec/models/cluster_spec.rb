@@ -13,23 +13,27 @@ RSpec.describe Cluster, type: :model do
     Cluster.new(
       name: 'Food',
       icon: 'http://fasfa-utensils',
-      author_id: user.id
+      user_id: user.id
     )
   end
 
   before { subject.save }
 
   describe 'valid attributes' do
-    it 'has a name' do
-      expect(subject.name).to eq('Food')
+    it 'is valid with valid attributes' do
+      expect(subject).to be_valid
+    end
+  end
+
+  describe 'invalid attributes' do
+    it 'is not valid without a name' do
+      subject.name = nil
+      expect(subject).to_not be_valid
     end
 
-    it 'has a icon' do
-      expect(subject.icon).to eq('http://fasfa-utensils')
-    end
-
-    it 'has a author_id' do
-      expect(subject.author_id).to eq(user.id)
+    it 'is not valid without a user_id' do
+      subject.user_id = nil
+      expect(subject).to_not be_valid
     end
   end
 end
