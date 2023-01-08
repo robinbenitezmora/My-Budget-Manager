@@ -95,7 +95,7 @@ After you're finished please remove all the comments and instructions!
 ### Media and Live Demo <a name="presentation"></a>
 
 [Video presentation](https://drive.google.com/file/d/1tw8ZqRIq7FthPAdj8zmVRgNb78NUUFXj/view?usp=share_link)  <br/>
-[Deploy](https://little-budged.onrender.com/splashs/index)
+[Deploy](https://my-budget-manager-c423.onrender.com)
 
 
 <!-- GETTING STARTED -->
