@@ -1,0 +1,33 @@
+<%= form_with(model: start) do |form| %>
+  <% if start.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(start.errors.count, "error") %> prohibited this start from being saved:</h2>
+
+      <ul>
+        <% start.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :name, placeholder: "Name" %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :amount, placeholder: "Amount" %>
+  </div>
+
+  <div class="categorie-input-container">
+    <%= form.select :cluster_id, Cluster.all.collect {|cluster| [cluster.name, cluster.id]},{include_blank: true}, :required => 'required', class:"form-select" %>
+  </div>
+
+  <div class="add-t-container">
+    <%= form.submit 'SAVE', class:"add-transaction" %>
+  </div>
+
+  <div class="button-back">
+    <%= link_to "Back to charges", starts_path, class: "back-to" %>
+  </div>
+<% end %>

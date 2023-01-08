@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Net proxima nova';
+  src: url('net-proxima_nova.ttf');
+}
+
+body {
+  font-family: 'Net proxima nova', sans-serif;
+  background-color: #f2f2f2;
+}

@@ -11,6 +11,34 @@
   </head>
 
   <body>
+    <%if user_signed_in? %>
+    <nav class="nav section-name form-nav">
+      <% if current_page?(root_path) || current_page?(controller: "clusters", action: "new") %>
+      <div class="new-my-form">
+        <%= image_tag("https://img.icons8.com/ios-glyphs/30/FFFFFF/menu--v1.png") %>
+        <h2>CATEGORIES</h2>
+        <%= button_to "Sign Out", destroy_user_session_path, class: "signout", method: :delete %>
+      </div>
+
+      <% elsif current_page?(controller: "starts", action: "new")%>
+
+      <div class="new-my-form">
+        <%= link_to '<', :back %>
+        <h2>TRANSACTIONS</h2>
+        <%= button_to "Sign Out", destroy_user_session_path, class: "signout", method: :delete %>
+      </div>
+
+      <% else %>
+      <div class="new-my-form">
+        <%= link_to '<', root_path %>
+        <h2>TRANSACTIONS</h2>
+        <%= button_to "Sign Out", destroy_user_session_path, class: "signout", method: :delete %>
+      </div>
+      <% end %>
+    </nav>
+    <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
