@@ -18,7 +18,7 @@ body {
   padding-top: 4rem;
 }
 
-.pages-section img {
+/* .pages-section img {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +26,7 @@ body {
   height: auto;
   margin: -1rem 0 1rem 0;
   border-radius: 1rem;
-}
+} */
 
 .pages-section ul {
   list-style-type: none;
@@ -74,4 +74,13 @@ body {
 .pages-section ul .unactive-button a {
   font-weight: 600;
   color: #434b54;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 90%;
+  padding: 1rem;
 }
